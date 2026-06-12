@@ -1,0 +1,48 @@
+@import "./fonts.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Rokh", sans-serif;
+
+   --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #CB1B1B;
+  --color-primary-600: #b41717;
+  --color-primary-700: #981515;
+  --color-primary-800: #7c1212;
+  --color-primary-900: #660f0f;
+
+  --color-black: #121212;
+
+  --breakpoint-md-custom: 769px;
+  --breakpoint-lg-custom: 900px;
+}
+
+body {
+  @apply font-sans;
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.5);
+  }
+
+  60% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.badge-pop {
+  animation: badgePop 0.5s ease;
+}

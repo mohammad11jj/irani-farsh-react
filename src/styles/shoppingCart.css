@@ -1,0 +1,33 @@
+.cart-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  /* gap: 24px; */
+  row-gap: 24px;
+  grid-template-areas:
+    "image info"
+    "quantity .";
+}
+
+.info {
+  grid-area: info;
+}
+
+.image {
+  grid-area: image;
+}
+
+.quantity {
+  grid-area: quantity;
+  justify-self: start;
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  .cart-item {
+    grid-template-columns: 160px 1fr;
+
+    grid-template-areas:
+      "image info"
+      "image quantity";
+  }
+}
