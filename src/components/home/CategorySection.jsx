@@ -7,7 +7,6 @@ function CategorySection({ images, categories }) {
                 linear-gradient(270.11deg, rgba(2, 47, 113, 0.6) -99.67%, rgba(0, 0, 0, 0) 99.78%)`,
   };
 
-  // مقادیر پیش‌فرض در صورت عدم وجود categories
   const defaultCategories = [
     { title: "فرش های جدید", buttonText: "مشاهده و خرید فرش جدید" },
     { title: "فرش های رنگارنگ", buttonText: "مشاهده و خرید فرش رنگارنگ" },
@@ -20,11 +19,8 @@ function CategorySection({ images, categories }) {
   return (
     <div className="my-30">
       <Container>
-        {/* گرید با ارتفاع ثابت در دسکتاپ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-4 md:gap-6 lg:h-[288px]">
-          
-          {/* آیتم اول - قرمز (در دسکتاپ: ستون اول، 2 سطر) */}
-          <div className="relative lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden min-h-[280px] md:min-h-[300px] lg:min-h-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-4 md:gap-6 lg:h-72">
+          <div className="relative lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden min-h-70 md:min-h-75 lg:min-h-0">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${images?.image1})` }}
@@ -43,8 +39,7 @@ function CategorySection({ images, categories }) {
             </div>
           </div>
 
-          {/* آیتم دوم - آبی (در دسکتاپ: ستون دوم، 2 سطر) */}
-          <div className="relative lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden min-h-[280px] md:min-h-[300px] lg:min-h-0">
+          <div className="relative lg:col-span-1 lg:row-span-2 rounded-2xl overflow-hidden min-h-70 md:min-h-75 lg:min-h-0">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${images?.image2})` }}
@@ -63,8 +58,7 @@ function CategorySection({ images, categories }) {
             </div>
           </div>
 
-          {/* آیتم سوم - زرد (در دسکتاپ: ستون سوم، سطر اول) */}
-          <div className="relative lg:col-span-1 rounded-2xl overflow-hidden min-h-[280px] md:min-h-[300px] lg:min-h-0">
+          <div className="relative lg:col-span-1 rounded-2xl overflow-hidden min-h-70 md:min-h-75 lg:min-h-0">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${images?.image3})` }}
@@ -83,8 +77,7 @@ function CategorySection({ images, categories }) {
             </div>
           </div>
 
-          {/* آیتم چهارم - سبز (در دسکتاپ: ستون سوم، سطر دوم) */}
-          <div className="relative lg:col-span-1 rounded-2xl overflow-hidden min-h-[280px] md:min-h-[300px] lg:min-h-0">
+          <div className="relative lg:col-span-1 rounded-2xl overflow-hidden min-h-70 md:min-h-75 lg:min-h-0">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${images?.image4})` }}

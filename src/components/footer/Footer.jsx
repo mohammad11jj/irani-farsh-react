@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Logo from "../common/Logo";
 import SocialLinks from "./SocialLinks";
 import FooterLinks from "./FooterLinks";

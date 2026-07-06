@@ -1,7 +1,6 @@
 .cart-item {
   display: grid;
   grid-template-columns: 160px 1fr;
-  /* gap: 24px; */
   row-gap: 24px;
   grid-template-areas:
     "image info"

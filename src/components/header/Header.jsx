@@ -17,23 +17,23 @@ function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-const prevItems = useRef(totalItems);
+  const prevItems = useRef(totalItems);
 
-useEffect(() => {
-  if (totalItems > prevItems.current) {
-    setAnimate(true);
+  useEffect(() => {
+    if (totalItems > prevItems.current) {
+      setAnimate(true);
 
-    const timer = setTimeout(() => {
-      setAnimate(false);
-    }, 300);
+      const timer = setTimeout(() => {
+        setAnimate(false);
+      }, 300);
+
+      prevItems.current = totalItems;
+
+      return () => clearTimeout(timer);
+    }
 
     prevItems.current = totalItems;
-
-    return () => clearTimeout(timer);
-  }
-
-  prevItems.current = totalItems;
-}, [totalItems]);
+  }, [totalItems]);
 
   return (
     <header className="border-b border-neutral-300 md:border-0">
@@ -72,59 +72,62 @@ useEffect(() => {
               </div>
             </div>
 
-            {/* بقیه کد header به همان صورت قبلی */}
             <div className="flex items-center gap-2 md:gap-4">
               {/* Cart btn */}
-              
-                <Link to="/cart" className="relative w-12 h-12 px-1 border border-primary-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary-500 group">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-all duration-300"
-                  >
-                    <path
-                      d="M14.55 11C15.3 11 15.96 10.59 16.3 9.97L19.88 3.48C20.25 2.82 19.77 2 19.01 2H4.21L3.27 0H0V2H2L5.6 9.59L4.25 12.03C3.52 13.37 4.48 15 6 15H18V13H6L7.1 11H14.55ZM5.16 4H17.31L14.55 9H7.53L5.16 4ZM6 16C4.9 16 4.01 16.9 4.01 18C4.01 19.1 4.9 20 6 20C7.1 20 8 19.1 8 18C8 16.9 7.1 16 6 16ZM16 16C14.9 16 14.01 16.9 14.01 18C14.01 19.1 14.9 20 16 20C17.1 20 18 19.1 18 18C18 16.9 17.1 16 16 16Z"
-                      fill="#CB1B1B"
-                      className="transition-all duration-300 group-hover:fill-white"
-                    />
-                  </svg>
-                  {totalItems > 0 && (
-                    <span
-                      className={`absolute -top-2 -right-2 flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-primary-500 text-white text-[10px] font-bold shadow-md transition-transform ${
-                        animate ? "badge-pop" : ""
-                      }`}
-                    >
-                      {totalItems}
-                    </span>
-                  )}
-                </Link>
-              
 
-              
-                <Link to="/register" className="w-12 h-12 px-1 border border-primary-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary-500 group md:hidden">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 16 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-all duration-300"
+              <Link
+                to="/cart"
+                className="relative w-12 h-12 px-1 border border-primary-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary-500 group"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="transition-all duration-300"
+                >
+                  <path
+                    d="M14.55 11C15.3 11 15.96 10.59 16.3 9.97L19.88 3.48C20.25 2.82 19.77 2 19.01 2H4.21L3.27 0H0V2H2L5.6 9.59L4.25 12.03C3.52 13.37 4.48 15 6 15H18V13H6L7.1 11H14.55ZM5.16 4H17.31L14.55 9H7.53L5.16 4ZM6 16C4.9 16 4.01 16.9 4.01 18C4.01 19.1 4.9 20 6 20C7.1 20 8 19.1 8 18C8 16.9 7.1 16 6 16ZM16 16C14.9 16 14.01 16.9 14.01 18C14.01 19.1 14.9 20 16 20C17.1 20 18 19.1 18 18C18 16.9 17.1 16 16 16Z"
+                    fill="#CB1B1B"
+                    className="transition-all duration-300 group-hover:fill-white"
+                  />
+                </svg>
+                {totalItems > 0 && (
+                  <span
+                    className={`absolute -top-2 -right-2 flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-primary-500 text-white text-[10px] font-bold shadow-md transition-transform ${
+                      animate ? "badge-pop" : ""
+                    }`}
                   >
-                    <path
-                      d="M11.6667 11.6667L15.8333 7.5L11.6667 3.33333L10.4917 4.50833L12.6417 6.66667H5V8.33333H12.6417L10.4917 10.4917L11.6667 11.6667Z"
-                      fill="#CB1B1B"
-                      className="transition-all duration-300 group-hover:fill-white"
-                    />
-                    <path
-                      d="M13.3333 13.3333H1.66667V1.66667H13.3333V3.33333H15V1.66667C15 0.75 14.2583 0 13.3333 0H1.66667C0.75 0 0 0.75 0 1.66667V13.3333C0 14.25 0.75 15 1.66667 15H13.3333C14.2583 15 15 14.25 15 13.3333V11.6667H13.3333V13.3333Z"
-                      fill="#CB1B1B"
-                      className="transition-all duration-300 group-hover:fill-white"
-                    />
-                  </svg>
-                </Link>
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+
+              <Link
+                to="/register"
+                className="w-12 h-12 px-1 border border-primary-500 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:bg-primary-500 group md:hidden"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="transition-all duration-300"
+                >
+                  <path
+                    d="M11.6667 11.6667L15.8333 7.5L11.6667 3.33333L10.4917 4.50833L12.6417 6.66667H5V8.33333H12.6417L10.4917 10.4917L11.6667 11.6667Z"
+                    fill="#CB1B1B"
+                    className="transition-all duration-300 group-hover:fill-white"
+                  />
+                  <path
+                    d="M13.3333 13.3333H1.66667V1.66667H13.3333V3.33333H15V1.66667C15 0.75 14.2583 0 13.3333 0H1.66667C0.75 0 0 0.75 0 1.66667V13.3333C0 14.25 0.75 15 1.66667 15H13.3333C14.2583 15 15 14.25 15 13.3333V11.6667H13.3333V13.3333Z"
+                    fill="#CB1B1B"
+                    className="transition-all duration-300 group-hover:fill-white"
+                  />
+                </svg>
+              </Link>
               {/* Register or login btn in desktop */}
               <div className="hidden md:block">
                 <Button

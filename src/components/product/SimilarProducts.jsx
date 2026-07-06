@@ -4,7 +4,7 @@ import Container from "../common/Container";
 import ProductCard from "./ProductCard";
 
 function SimilarProducts({ products }) {
-  // اگه محصولی وجود نداشت، چیزی نشون نده
+
   if (!products || products.length === 0) {
     return null;
   }

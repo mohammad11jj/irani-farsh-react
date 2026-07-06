@@ -8,7 +8,7 @@ function ProductList({products, title }) {
       <Container>
         <div className="flex flex-col gap-8">
           <div className="flex items-center justify-between">
-            <h4 className="text-2xl text-black font-bold ">{title}</h4>
+            <h4 className="text-lg sm:text-2xl text-black font-bold ">{title}</h4>
             <Button tailwindClasses=" text-primary-500 border-primary-500 hover:text-white hover:bg-primary-500 group" to='/'>
               <span  className="translate-y-0.75">مشاهده همه</span>
 

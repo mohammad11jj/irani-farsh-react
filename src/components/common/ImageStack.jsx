@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function ImageStack({ images = [] }) {
   const [isRotated, setIsRotated] = useState(false);
@@ -19,12 +19,12 @@ function ImageStack({ images = [] }) {
 
   return (
     <div className="relative flex justify-start">
-      <div className="relative md:w-45 md:h-70  lg:w-60 lg:h-90 w-40 h-100 mx-5 mt-25 ">
+      <div className="relative md:w-45 md:h-70  lg:w-60 lg:h-90 w-40 h-50 mx-0 mt-5 md:mt-25 sm:mb-15">
         {/* عکس 5 - پایین‌ترین لایه */}
         <img
           src={finalImages[4]?.src}
           alt={finalImages[4]?.alt}
-          className="absolute top-0 left-0 w-45 h-80 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
+          className="absolute top-0 left-0 w-30 h-50 sm:w-35 sm:h-65 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
           style={{
             transform: isRotated ? "rotate(0deg)" : "rotate(-46deg)",
             opacity: isRotated ? 1 : 0.5,
@@ -37,7 +37,7 @@ function ImageStack({ images = [] }) {
         <img
           src={finalImages[3]?.src}
           alt={finalImages[3]?.alt}
-          className="absolute top-0 left-0 w-45 h-80 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
+          className="absolute top-0 left-0 w-30 h-50 sm:w-35 sm:h-65 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
           style={{
             transform: isRotated ? "rotate(0deg)" : "rotate(-34deg)",
             opacity: isRotated ? 1 : 0.63,
@@ -50,7 +50,7 @@ function ImageStack({ images = [] }) {
         <img
           src={finalImages[2]?.src}
           alt={finalImages[2]?.alt}
-          className="absolute top-0 left-0 w-45 h-80 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
+          className="absolute top-0 left-0 w-30 h-50 sm:w-35 sm:h-65 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
           style={{
             transform: isRotated ? "rotate(0deg)" : "rotate(-23deg)",
             opacity: isRotated ? 1 : 0.75,
@@ -63,7 +63,7 @@ function ImageStack({ images = [] }) {
         <img
           src={finalImages[1]?.src}
           alt={finalImages[1]?.alt}
-          className="absolute top-0 left-0 w-45 h-80 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
+          className="absolute top-0 left-0 w-30 h-50 sm:w-35 sm:h-65 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
           style={{
             transform: isRotated ? "rotate(0deg)" : "rotate(-12deg)",
             opacity: isRotated ? 1 : 0.8,
@@ -76,7 +76,7 @@ function ImageStack({ images = [] }) {
         <img
           src={finalImages[0]?.src}
           alt={finalImages[0]?.alt}
-          className="absolute top-0 left-0 w-45 h-80 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
+          className="absolute top-0 left-0 w-30 h-50 sm:w-35 sm:h-65 md:w-45 md:h-70 lg:w-60 lg:h-90 hover:z-50! hover:opacity-100!"
           style={{
             transform: isRotated ? "rotate(0deg)" : "rotate(0deg)",
             opacity: isRotated ? 1 : 1,
@@ -87,12 +87,11 @@ function ImageStack({ images = [] }) {
       </div>
 
       <svg
-        className={`absolute -left-50 bottom-10 cursor-pointer transition-transform duration-[1.3s] ease-in-out ${
+        className={`absolute -left-30 bottom-10 sm:-left-50 sm:bottom-20 cursor-pointer transition-transform duration-[1.3s] ease-in-out w-10 h-4 sm:w-21.75 sm:h-5 ${
           isRotated ? "rotate-180" : "rotate-0"
         }`}
         onClick={handleToggle}
-        width="87"
-        height="20"
+        
         viewBox="0 0 87 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
