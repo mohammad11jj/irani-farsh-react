@@ -4,6 +4,9 @@ A modern carpet e-commerce frontend built with React, Redux Toolkit, React Route
 
 Designed from Figma and implemented with a focus on reusable components, responsive design, state management, and scalable architecture.
 
+Live Demo :
+https://irani-farsh-react.vercel.app/
+
 The project was developed with a strong focus on:
 
 * Reusable Components
